@@ -51,6 +51,7 @@ config :xain, :after_callback, {Phoenix.HTML, :raw}
 config :ex_admin,
   repo: Paper.Repo,
   module: Paper,
+  head_template: {Paper.AdminView, "admin_layout.html"},
   modules: [
     Paper.ExAdmin.Dashboard,
     Paper.ExAdmin.Post,

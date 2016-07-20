@@ -11,9 +11,8 @@
           Page是单独页面，需要指定slug(about/contact)等
         </p>
         <ul>
-          <li><a href="/backend/page/new">创建页面</a></li>
-          <li><a href="/backend/page/index">查看所有页面</a></li>
-          <li><a href="#">编辑指定页面</a></li>
+          <li><a href="/backend/admin/pages">所有页面</a></li>
+          <li><a href="/backend/admin/pages/new">创建页面</a></li>
         </ul>
       </div>
     </div>
@@ -28,9 +27,8 @@
           Post是信息发布，一般为通知等信息
         </p>
         <ul>
-          <li><a href="/backend/posts/new">新建文章</a></li>
-          <li><a href="/backend/posts/index">查看所有文章</a></li>
-          <li><a href="#">编辑指定页面</a></li>
+          <li><a href="/backend/admin/posts">所有文章</a></li>
+          <li><a href="/backend/admin/posts/new">新建文章</a></li>
         </ul>
       </div>
     </div>
@@ -44,7 +42,10 @@
         <h3 class="panel-title">后台纵览</h3>
       </div>
       <div class="panel-body">
-        <a href="/backend/admin">Admin</a>
+        <ul>
+          <li><a href="/backend/admin">后台 Admin</a></li>
+          <li><a href="/backend/review">评阅系统</a></li>
+        </ul>
       </div>
     </div>
   </div>
@@ -54,7 +55,10 @@
         <h3 class="panel-title">邮箱管理</h3>
       </div>
       <div class="panel-body">
-        <a href="/backend/mailbox">Mailbox</a>
+        <ul>
+          <li><a href="/backend/mailbox">本地 Mailbox</a></li>
+          <li><a href="#">搜狐 SendCloud</a></li>
+        </ul>
       </div>
     </div>
   </div>
