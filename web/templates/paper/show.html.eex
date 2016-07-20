@@ -1,0 +1,23 @@
+<h2>我的论文</h2>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @paper.title %>
+  </li>
+
+  <li>
+    <strong>File name:</strong>
+    <%= @paper.file_name %>
+  </li>
+
+  <li>
+    <strong>File url:</strong>
+    <%= @paper.file_url %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: paper_path(@conn, :edit, @paper) %>
+<%= link "Back", to: paper_path(@conn, :index) %>

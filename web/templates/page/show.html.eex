@@ -1,0 +1,9 @@
+<main class="main-content">
+  <div class="widget">
+    <h2><%= @page.title %></h2>
+
+
+    <%= raw @page.content %>
+
+  </div>
+</main>
