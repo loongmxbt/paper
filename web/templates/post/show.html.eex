@@ -1,18 +1,10 @@
-<h2>Show post</h2>
+<main class="main-content">
+  <div class="widget">
+    <div class="title"><%= @post.title %></div>
+    <div class="content">
+      <%= raw @post.content %>
 
-<ul>
-
-  <li>
-    <strong>Title:</strong>
-    <%= @post.title %>
-  </li>
-
-  <li>
-    <strong>Content:</strong>
-    <%= @post.content %>
-  </li>
-
-</ul>
-
-<%= link "Edit", to: post_path(@conn, :edit, @post) %>
-<%= link "Back", to: post_path(@conn, :index) %>
+      <%= link "返回", to: post_path(@conn, :index) %>
+    </div>
+  </div>
+</main>

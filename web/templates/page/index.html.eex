@@ -3,17 +3,18 @@
     <img src="http://clbs.escience.cn/doc/56e8ee73e4b07669127ddb6f.jpg" height="200" width="670">
   </div>
   <div class="widget">
-    <h4 class="title">重要通知</h4>
+    <div class="title">重要通知</div>
     <div class="content">
       <ul>
         <li>会议投稿截止日期延长至6月30日</li>
         <li>2016中国工程热物理学会燃烧学学术年会通知（PDF文档下载）</li>
         <li>Call for papers (for foreign attendees)（PDF Version）</li>
+        <li><a href="/posts">所有通知</a></li>
       </ul>
     </div>
   </div>
   <div class="widget">
-    <h4 class="title">组委会致欢迎辞</h4>
+    <div class="title">组委会致欢迎辞</div>
     <div class="content">
       <p>
         伴随着火的使用，人类文明逐渐走出黑暗，迈向光明。燃烧渗透在人们日常生活的各个方面，人类对燃烧的探索也从未停止。燃烧学的发展进步，为解决能源和环境危机、开展火灾防治等提供了重要的理论指导，也为人类在能源、环境、火灾、国防及空间探索等诸多领域中的活动提供了科学依据。
@@ -27,7 +28,7 @@
     </div>
   </div>
   <div class="widget">
-    <h4 class="title">2016中国工程热物理学会工程热物理分会</h4>
+    <div class="title">2016中国工程热物理学会工程热物理分会</div>
     <div class="content">
       <div class="row">
         <div class="col-sm-3">
