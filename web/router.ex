@@ -3,6 +3,8 @@ defmodule Paper.Router do
   use Coherence.Router
   use ExAdmin.Router
 
+  forward "/attachments", Exfile.Router
+
   pipeline :public do
     plug :accepts, ["html"]
     plug :fetch_session

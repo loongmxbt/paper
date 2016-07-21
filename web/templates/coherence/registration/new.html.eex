@@ -14,7 +14,7 @@
 
     <div class="form-group">
       <%= required_label f, gettext("Name"), class: "control-label" %>
-      <%= text_input f, :name, class: "form-control", required: "" %>
+      <%= text_input f, :name, class: "form-control", required: "", placeholder: "支持中英文 3-20 位" %>
       <%= error_tag f, :name %>
     </div>
 
@@ -28,19 +28,19 @@
 
     <div class="form-group">
       <%= required_label f, :email, class: "control-label" %>
-      <%= text_input f, :email, class: "form-control", required: "" %>
+      <%= text_input f, :email, class: "form-control", required: "", placeholder: "用于登录和邮箱验证" %>
       <%= error_tag f, :email %>
     </div>
 
     <div class="form-group">
       <%= required_label f, gettext("Password"), class: "control-label" %>
-      <%= password_input f, :password, class: "form-control", required: "" %>
+      <%= password_input f, :password, class: "form-control", required: "", placeholder: "不少于 6 位" %>
       <%= error_tag f, :password %>
     </div>
 
     <div class="form-group">
       <%= required_label f, gettext("Password Confirmation"), class: "control-label" %>
-      <%= password_input f, :password_confirmation, class: "form-control", required: "" %>
+      <%= password_input f, :password_confirmation, class: "form-control", required: "", placeholder: "再次输入密码" %>
       <%= error_tag f, :password_confirmation %>
     </div>
 

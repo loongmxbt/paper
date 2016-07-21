@@ -9,14 +9,14 @@
           <th>论文文件</th>
           <th>评阅状态</th>
           <th>操作</th>
-          
+
         </tr>
       </thead>
       <tbody>
       <%= for paper <- @papers do %>
       <tr>
         <td><%= paper.title %></td>
-        <td><a href="<%= paper.file_url %>"><%= paper.file_name %></a></td>
+        <td><a href="<%= exfile_url(@conn, paper.file) %>"><%= paper.title %></a></td>
         <td>正在评阅</td>
 
         <td class="text-right">

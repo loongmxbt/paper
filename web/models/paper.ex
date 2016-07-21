@@ -3,8 +3,7 @@ defmodule Paper.Paper do
 
   schema "papers" do
     field :title, :string
-    field :file_name, :string
-    field :file_url, :string
+    field :file, Exfile.Ecto.File
     belongs_to :topic, Paper.Topic
     belongs_to :user, Paper.User
 
@@ -16,7 +15,7 @@ defmodule Paper.Paper do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:title, :file_name, :file_url, :topic_id])
-    |> validate_required([:title, :file_name, :file_url])
+    |> cast(params, [:title, :file, :topic_id])
+    |> validate_required([:title, :topic_id, :file])
   end
 end

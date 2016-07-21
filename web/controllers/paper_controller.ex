@@ -17,7 +17,7 @@ defmodule Paper.PaperController do
   end
 
   def create(conn, %{"paper" => paper_params}) do
-    IO.inspect paper_params
+    # IO.inspect paper_params
     changeset = Paper.changeset(%Paper{}, paper_params)
 
     case Repo.insert(changeset) do

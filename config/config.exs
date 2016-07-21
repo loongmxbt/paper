@@ -61,3 +61,15 @@ config :ex_admin,
     Paper.ExAdmin.Paper,
     Paper.ExAdmin.Page
   ]
+
+# ExFile
+config :exfile, Exfile,
+  secret: "x1fh/CivQeGV6npnqfJ4Ht2LGh/EtgYQavyIi0L2y+8b9tZpwQ1l88qBqWqYb7PN",
+  backends: %{
+    "store" => {Exfile.Backend.FileSystem,
+      directory: Path.expand("./uploads/store")
+    },
+    "cache" => {Exfile.Backend.FileSystem,
+      directory: Path.expand("./uploads/cache")
+    }
+  }

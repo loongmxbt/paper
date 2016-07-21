@@ -8,8 +8,8 @@
         <li role="presentation"><a href="/papers"><i class="fa fa-paper-plane" aria-hidden="true"></i> 会议投稿</a></li>
         <li role="presentation"><a href="/page/calendar"><i class="fa fa-calendar" aria-hidden="true"></i> 会议日程</a></li>
         <li role="presentation"><a href="/posts"><i class="fa fa-info-circle" aria-hidden="true"></i> 会议通知</a></li>
-        <li role="presentation"><a href="/page/report"><i class="fa fa-flag" aria-hidden="true"></i> 特邀报告</a></li>
-        <li role="presentation"><a href="/page/download"><i class="fa fa-download" aria-hidden="true"></i> 文档下载</a></li>
+        <li role="presentation"><a href="/page/reports"><i class="fa fa-flag" aria-hidden="true"></i> 特邀报告</a></li>
+        <li role="presentation"><a href="/page/downloads"><i class="fa fa-download" aria-hidden="true"></i> 文档下载</a></li>
       </ul>
     </div>
   </div>

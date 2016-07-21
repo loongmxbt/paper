@@ -19,7 +19,7 @@ defmodule Paper.Mixfile do
   def application do
     [mod: {Paper, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :coherence]]
+                    :phoenix_ecto, :postgrex, :coherence, :exfile]]
   end
 
   # Specifies which paths to compile per environment.
@@ -39,7 +39,8 @@ defmodule Paper.Mixfile do
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
      {:coherence, "~> 0.1"},
-     {:ex_admin, github: "smpallen99/ex_admin"}]
+     {:ex_admin, github: "smpallen99/ex_admin"},
+     {:exfile, "~> 0.3.0"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

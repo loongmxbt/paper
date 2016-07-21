@@ -52,6 +52,8 @@ defmodule Paper.Web do
       import Paper.Router.Helpers
       import Paper.ErrorHelpers
       import Paper.Gettext
+      
+      import Exfile.Phoenix.Helpers
     end
   end
 

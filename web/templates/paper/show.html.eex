@@ -7,15 +7,6 @@
     <%= @paper.title %>
   </li>
 
-  <li>
-    <strong>File name:</strong>
-    <%= @paper.file_name %>
-  </li>
-
-  <li>
-    <strong>File url:</strong>
-    <%= @paper.file_url %>
-  </li>
 
 </ul>
 
