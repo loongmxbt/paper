@@ -18,11 +18,11 @@ defmodule Paper.Topic do
   end
 
   def order_by_id(query) do
-    from c in query, order_by: c.id
+    from t in query, order_by: t.id
   end
 
   def select_names_and_ids(query) do
-    from c in query, select: {c.name, c.id}
+    from t in query, select: {t.name, t.id}
   end
 
 end

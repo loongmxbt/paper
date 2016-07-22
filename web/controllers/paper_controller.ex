@@ -2,12 +2,16 @@ defmodule Paper.PaperController do
   use Paper.Web, :controller
 
   alias Paper.Topic
+  alias Paper.User
   alias Paper.Paper
 
   plug :load_topics when action in [:new, :create, :edit, :update]
 
   def index(conn, _params) do
-    papers = Repo.all(Paper)
+    topics_query = from t in Topic, select: t.name
+    users_query = from u in User, select: u.name
+    papers = Repo.all(from p in Paper, preload: [topic: ^topics_query, user: ^users_query])
+    IO.inspect papers
     render(conn, "index.html", papers: papers)
   end
 
