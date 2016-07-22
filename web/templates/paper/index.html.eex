@@ -8,7 +8,6 @@
           <th>论文标题</th>
           <th>所属主题</th>
           <th>评阅状态</th>
-          <th>作者</th>
           <th class="text-center">操作</th>
 
         </tr>
@@ -17,9 +16,8 @@
       <%= for paper <- @papers do %>
       <tr>
         <td><a href="<%= exfile_url(@conn, paper.file) %>"><%= paper.title %></a></td>
-        <td><%= paper.topic %></td>
+        <td><%= paper.topic.name %></td>
         <td>正在评阅</td>
-        <td><%= paper.user %></td>
 
         <td class="text-right">
           <%= link "显示", to: paper_path(@conn, :show, paper), class: "btn btn-default btn-xs" %>

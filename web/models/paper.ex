@@ -15,7 +15,7 @@ defmodule Paper.Paper do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:title, :file, :topic_id])
-    |> validate_required([:title, :topic_id, :file])
+    |> cast(params, [:title, :file, :topic_id, :user_id])
+    |> validate_required([:title, :topic_id, :file, :user_id])
   end
 end

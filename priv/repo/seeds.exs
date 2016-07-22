@@ -4,6 +4,7 @@ alias Paper.User
 alias Paper.Role
 alias Paper.Topic
 alias Paper.Page
+alias Paper.Paper
 
 # Add Roles
 Repo.delete_all Role
@@ -20,13 +21,14 @@ end
 # Add Users
 Repo.delete_all User
 User.changeset(%User{}, %{name: "dragonszy", email: "dragonszy@163.com", password: "szy555", password_confirmation: "szy555", role_id: 3})
-|> Repo.insert! |> User.confirm!
+|> Repo.insert! |> Coherence.ControllerHelpers.confirm!
 
 User.changeset(%User{}, %{name: "professor", email: "professor@163.com", password: "prof555", password_confirmation: "prof555", role_id: 2})
-|> Repo.insert! |> User.confirm!
+|> Repo.insert! |> Coherence.ControllerHelpers.confirm!
 
-User.changeset(%User{}, %{name: "test", email: "test@163.com", password: "test555", password_confirmation: "test555", role_id: 1})
-|> Repo.insert! |> User.confirm!
+User.changeset(%User{}, %{name: "phoenixfbi", email: "phoenixfbi@163.com", password: "fbi555", password_confirmation: "fbi555", role_id: 1})
+|> Repo.insert! |> Coherence.ControllerHelpers.confirm!
+
 
 
 # Add pages
@@ -56,3 +58,12 @@ Page.changeset(%Page{}, %{title: "会议日程", slug: "calendar", content: "con
 
 Page.changeset(%Page{}, %{title: "联系我们", slug: "contact", content: "content here"})
 |> Repo.insert!
+
+
+# Add Papers
+Repo.delete_all Paper
+Paper.changeset(%Paper{}, %{title: "热力学第一定律dragonszy", topic_id: 1, user_id: 1, file: "fileurl"})
+|> Repo.insert
+
+Paper.changeset(%Paper{}, %{title: "热力学第三定律phoenix", topic_id: 3, user_id: 3, file: "fileurl"})
+|> Repo.insert
