@@ -4,6 +4,7 @@ alias Paper.User
 alias Paper.Role
 alias Paper.Topic
 alias Paper.Page
+alias Paper.Status
 alias Paper.Paper
 
 # Add Roles
@@ -32,6 +33,7 @@ User.changeset(%User{}, %{name: "phoenixfbi", email: "phoenixfbi@163.com", passw
 
 
 # Add pages
+Repo.delete_all Page
 Page.changeset(%Page{}, %{title: "组织结构", slug: "organization", content: "content here"})
 |> Repo.insert!
 
@@ -58,6 +60,13 @@ Page.changeset(%Page{}, %{title: "会议日程", slug: "calendar", content: "con
 
 Page.changeset(%Page{}, %{title: "联系我们", slug: "contact", content: "content here"})
 |> Repo.insert!
+
+# Status
+Repo.delete_all Status
+Status.changeset(%Status{}, %{name: "Waiting"}) |> Repo.insert!
+Status.changeset(%Status{}, %{name: "Passed"}) |> Repo.insert!
+Status.changeset(%Status{}, %{name: "Denied"}) |> Repo.insert!
+
 
 
 # Add Papers
