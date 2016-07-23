@@ -61,9 +61,13 @@ Page.changeset(%Page{}, %{title: "联系我们", slug: "contact", content: "cont
 
 
 # Add Papers
-Repo.delete_all Paper
-Paper.changeset(%Paper{}, %{title: "热力学第一定律dragonszy", topic_id: 1, user_id: 1, file: "fileurl"})
-|> Repo.insert
+# Paper record not added because file is invalid
+backend = Exfile.Config.get_backend("store")
+{:ok, file} = Exfile.Backend.upload(backend, %Exfile.LocalFile{path: "/Users/loongmxbt/Pictures/alpha-go.jpg"})
 
-Paper.changeset(%Paper{}, %{title: "热力学第三定律phoenix", topic_id: 3, user_id: 3, file: "fileurl"})
-|> Repo.insert
+Repo.delete_all Paper
+Paper.changeset(%Paper{}, %{title: "热力学第一定律dragonszy", topic_id: 1, user_id: 1, file: file})
+|> Repo.insert!
+
+Paper.changeset(%Paper{}, %{title: "热力学第三定律phoenix", topic_id: 3, user_id: 3, file: file})
+|> Repo.insert!

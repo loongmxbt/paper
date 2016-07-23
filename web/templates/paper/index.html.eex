@@ -1,6 +1,16 @@
 <main class="main-content">
   <div class="widget">
-    <h2>我的论文</h2>
+    <div class="title">
+      我的论文
+    </div>
+
+    <div class="info bg-info">
+      <ul>
+        <li>论文标题不可重复，创建论文为新论文</li>
+        <li>修改论文点击编辑，可修改标题，重新上传文件</li>
+        <li>所有论文参与评阅，重复论文请删除</li>
+      </ul>
+    </div>
 
     <table class="table">
       <thead>
@@ -27,6 +37,7 @@
       </tr>
       <% end %>
     </tbody>
+
   </table>
 
   <%= link "创建论文", to: paper_path(@conn, :new) %>

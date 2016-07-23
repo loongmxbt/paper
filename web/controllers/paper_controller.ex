@@ -54,7 +54,7 @@ defmodule Paper.PaperController do
   end
 
   def show(conn, %{"id" => id}, user) do
-    paper = Repo.get!(Paper, id)
+    paper = Repo.get!(Paper, id) |> Repo.preload(:topic)
     render(conn, "show.html", paper: paper)
   end
 

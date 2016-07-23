@@ -110,3 +110,14 @@ a:focus {
 form.link, form.button {
   display: inline;
 }
+
+.info {
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.info ul {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
