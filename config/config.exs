@@ -60,7 +60,8 @@ config :ex_admin,
     Paper.ExAdmin.Topic,
     Paper.ExAdmin.Paper,
     Paper.ExAdmin.Page,
-    Paper.ExAdmin.Status
+    Paper.ExAdmin.Status,
+    Paper.ExAdmin.Review
   ]
 
 # ExFile

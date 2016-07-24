@@ -11,7 +11,7 @@ user_id (role = prefessor)
 status
 content
 
-mix phoenix.gen.model Review reviews status_id:references:statuses paper_id:references:papers user_id:references:users content:text
+mix phoenix.gen.html Review reviews status_id:references:statuses paper_id:references:papers user_id:references:users content:text
 
 mix phoenix.gen.model Status statuses name:string
 

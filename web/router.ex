@@ -46,7 +46,7 @@ defmodule Paper.Router do
     coherence_routes :private
   end
 
-  # Public
+  # Public pages and posts
   scope "/", Paper do
     pipe_through :public
     get "/", PageController, :index
@@ -54,17 +54,22 @@ defmodule Paper.Router do
     resources "/posts", PostController, only: [:index, :show]
   end
 
+  # Login user paper submit
   scope "/", Paper do
     pipe_through :browser
     resources "/papers", PaperController
   end
 
-  # Backend
+  # Backend Professor Role
+  scope "/backend", Paper do
+    pipe_through [:public, :backend_layout]
+    resources "/reviews", ReviewController
+  end
+
+  # Backend Admin Role
   scope "/backend", Paper do
     pipe_through [:public, :backend_layout] # protected
     get "/", BackendController, :index
-    resources "/pages", PostController, except: [:index, :show]
-    resources "/posts", PostController, except: [:index, :show]
   end
 
   scope "/backend/admin", ExAdmin do
