@@ -5,10 +5,11 @@ defmodule Paper.BackendController do
     render conn, "index.html"
   end
 
-  def review(conn, _params) do
+  def reviews(conn, _params) do
+    render conn, "reviews.html"
     # list papers
     # list profs
-    
+
   end
 
 end

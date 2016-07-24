@@ -57,19 +57,15 @@ defmodule Paper.Router do
   # Login user paper submit
   scope "/", Paper do
     pipe_through :browser
-    resources "/papers", PaperController
-  end
-
-  # Backend Professor Role
-  scope "/backend", Paper do
-    pipe_through [:public, :backend_layout]
-    resources "/reviews", ReviewController
+    resources "/papers", PaperController # Login User
+    resources "/reviews", ReviewController # Professor
   end
 
   # Backend Admin Role
   scope "/backend", Paper do
     pipe_through [:public, :backend_layout] # protected
     get "/", BackendController, :index
+    get "/reviews", BackendController, :reviews
   end
 
   scope "/backend/admin", ExAdmin do

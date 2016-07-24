@@ -3,10 +3,11 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Status</th>
-      <th>Paper</th>
-      <th>User</th>
-      <th>Content</th>
+      <th>论文ID</th>
+      <th>论文标题</th>
+      <th>评阅人</th>
+      <th>状态</th>
+      <th>内容</th>
 
       <th></th>
     </tr>
@@ -14,9 +15,10 @@
   <tbody>
 <%= for review <- @reviews do %>
     <tr>
-      <td><%= review.status_id %></td>
       <td><%= review.paper_id %></td>
+      <td>论文标题</td>
       <td><%= review.user_id %></td>
+      <td><%= review.status_id %></td>
       <td><%= review.content %></td>
 
       <td class="text-right">
