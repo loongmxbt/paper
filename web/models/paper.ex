@@ -6,6 +6,7 @@ defmodule Paper.Paper do
     field :file, Exfile.Ecto.File
     belongs_to :topic, Paper.Topic
     belongs_to :user, Paper.User
+    has_many :reviews, Paper.Review
 
     timestamps()
   end
