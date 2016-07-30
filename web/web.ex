@@ -36,6 +36,7 @@ defmodule Paper.Web do
 
       import Paper.Router.Helpers
       import Paper.Gettext
+      import Paper.Auth, only: [auth_role: 2]
     end
   end
 
@@ -52,7 +53,7 @@ defmodule Paper.Web do
       import Paper.Router.Helpers
       import Paper.ErrorHelpers
       import Paper.Gettext
-      
+
       import Exfile.Phoenix.Helpers
     end
   end
@@ -60,6 +61,7 @@ defmodule Paper.Web do
   def router do
     quote do
       use Phoenix.Router
+      import Paper.Auth, only: [auth_role: 2]
     end
   end
 

@@ -24,7 +24,11 @@ defmodule Paper.Router do
   end
 
   pipeline :auth_admin do
+    plug :auth_role, "admin"
+  end
 
+  pipeline :auth_professor do
+    plug :auth_role, "professor"
   end
 
   pipeline :backend_layout do
@@ -58,18 +62,23 @@ defmodule Paper.Router do
   scope "/", Paper do
     pipe_through :browser
     resources "/papers", PaperController # Login User
+  end
+
+  # Login professor role for reviews
+  scope "/", Paper do
+    pipe_through [:browser, :auth_professor]
     resources "/reviews", ReviewController # Professor
   end
 
-  # Backend Admin Role
+  # Backend Admin Role: God View and Reviews
   scope "/backend", Paper do
-    pipe_through [:public, :backend_layout] # protected
+    pipe_through [:browser, :backend_layout, :auth_admin] # protected
     get "/", BackendController, :index
     get "/reviews", BackendController, :reviews
   end
 
   scope "/backend/admin", ExAdmin do
-    pipe_through [:public]
+    pipe_through [:browser, :auth_admin]
     admin_routes
   end
 

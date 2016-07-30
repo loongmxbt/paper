@@ -9,7 +9,7 @@ alias Paper.Paper
 
 # Add Roles
 Repo.delete_all Role
-for role_name <- ~w(User Professor Admin) do
+for role_name <- ~w(user professor admin) do
   Repo.insert!(%Role{name: role_name})
 end
 
