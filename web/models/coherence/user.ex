@@ -8,6 +8,7 @@ defmodule Paper.User do
     coherence_schema
     belongs_to :role, Paper.Role
     has_many :papers, Paper.Paper
+    has_many :reviews, Paper.Review
 
     timestamps
   end

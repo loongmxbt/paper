@@ -1,6 +1,14 @@
-<h2>Edit review</h2>
+<main class="main-content">
+  <div class="widget">
+    <div class="title">编辑评阅</div>
 
-<%= render "form.html", changeset: @changeset,
-                        action: review_path(@conn, :update, @review) %>
+    <h2>Edit review</h2>
 
-<%= link "Back", to: review_path(@conn, :index) %>
+    <%= render "form.html", changeset: @changeset,
+    action: review_path(@conn, :update, @review) %>
+
+    <%= link "Back", to: review_path(@conn, :index) %>
+
+  </div>
+</div>
+</main>

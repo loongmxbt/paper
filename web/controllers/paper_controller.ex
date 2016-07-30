@@ -16,8 +16,8 @@ defmodule Paper.PaperController do
   end
 
   def index(conn, _params, user) do
-    topics_query = from t in Topic, select: t.name
-    users_query = from u in User, select: u.name
+    # topics_query = from t in Topic, select: t.name
+    # users_query = from u in User, select: u.name
 
     # papers = Repo.all(from p in Paper,
     #                   preload: [topic: ^topics_query, user: ^users_query])

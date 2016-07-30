@@ -85,7 +85,7 @@ defmodule Paper.Router do
   # Swoosh mailbox
   if Mix.env == :dev do
     scope "/backend" do
-      pipe_through [:public]
+      pipe_through [:browser, :auth_admin]
       forward "/mailbox", Plug.Swoosh.MailboxPreview, [base_path: "/backend/mailbox"]
     end
   end

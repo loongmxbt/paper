@@ -5,6 +5,7 @@ alias Paper.Role
 alias Paper.Topic
 alias Paper.Page
 alias Paper.Status
+alias Paper.Review
 alias Paper.Paper
 
 # Add Roles
@@ -78,5 +79,12 @@ Repo.delete_all Paper
 Paper.changeset(%Paper{}, %{title: "热力学第一定律dragonszy", topic_id: 1, user_id: 1, file: file})
 |> Repo.insert!
 
-Paper.changeset(%Paper{}, %{title: "热力学第三定律phoenix", topic_id: 3, user_id: 3, file: file})
+Paper.changeset(%Paper{}, %{title: "热力学第二定律phoenix", topic_id: 3, user_id: 3, file: file})
+|> Repo.insert!
+
+# Add reviews
+Repo.delete_all Review
+Review.changeset(%Review{}, %{status_id: 1, paper_id: 1, user_id: 2})
+|> Repo.insert!
+Review.changeset(%Review{}, %{status_id: 1, paper_id: 2, user_id: 2})
 |> Repo.insert!

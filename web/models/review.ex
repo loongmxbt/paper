@@ -16,6 +16,6 @@ defmodule Paper.Review do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:content, :status_id, :paper_id, :user_id])
-    |> validate_required([:content, :status_id, :paper_id, :user_id])
+    |> validate_required([:status_id, :paper_id, :user_id])
   end
 end

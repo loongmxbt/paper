@@ -1,4 +1,6 @@
-<h2>Show review</h2>
+<main class="main-content">
+  <div class="widget">
+    <div class="title">我的评阅</div>
 
 <ul>
 
@@ -26,3 +28,6 @@
 
 <%= link "Edit", to: review_path(@conn, :edit, @review) %>
 <%= link "Back", to: review_path(@conn, :index) %>
+</div>
+</div>
+</main>
