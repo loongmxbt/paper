@@ -25,10 +25,21 @@ Repo.delete_all User
 User.changeset(%User{}, %{name: "dragonszy", email: "dragonszy@163.com", password: "szy555", password_confirmation: "szy555", role_id: 3})
 |> Repo.insert! |> Coherence.ControllerHelpers.confirm!
 
-User.changeset(%User{}, %{name: "professor", email: "professor@163.com", password: "prof555", password_confirmation: "prof555", role_id: 2})
+User.changeset(%User{}, %{name: "教授姓名1", email: "professor@163.com", password: "prof555", password_confirmation: "prof555", role_id: 2})
+|> Repo.insert! |> Coherence.ControllerHelpers.confirm!
+User.changeset(%User{}, %{name: "教授姓名2", email: "professor2@163.com", password: "prof555", password_confirmation: "prof555", role_id: 2})
+|> Repo.insert! |> Coherence.ControllerHelpers.confirm!
+User.changeset(%User{}, %{name: "教授姓名3", email: "professor3@163.com", password: "prof555", password_confirmation: "prof555", role_id: 2})
 |> Repo.insert! |> Coherence.ControllerHelpers.confirm!
 
+
 User.changeset(%User{}, %{name: "phoenixfbi", email: "phoenixfbi@163.com", password: "fbi555", password_confirmation: "fbi555", role_id: 1})
+|> Repo.insert! |> Coherence.ControllerHelpers.confirm!
+User.changeset(%User{}, %{name: "test1", email: "test1@163.com", password: "test555", password_confirmation: "test555", role_id: 1})
+|> Repo.insert! |> Coherence.ControllerHelpers.confirm!
+User.changeset(%User{}, %{name: "test2", email: "test2@163.com", password: "test555", password_confirmation: "test555", role_id: 1})
+|> Repo.insert! |> Coherence.ControllerHelpers.confirm!
+User.changeset(%User{}, %{name: "test3", email: "test3@163.com", password: "test555", password_confirmation: "test555", role_id: 1})
 |> Repo.insert! |> Coherence.ControllerHelpers.confirm!
 
 
@@ -76,15 +87,24 @@ backend = Exfile.Config.get_backend("store")
 {:ok, file} = Exfile.Backend.upload(backend, %Exfile.LocalFile{path: "/Users/loongmxbt/Pictures/alpha-go.jpg"})
 
 Repo.delete_all Paper
-Paper.changeset(%Paper{}, %{title: "热力学第一定律dragonszy", topic_id: 1, user_id: 1, file: file})
+Paper.changeset(%Paper{}, %{title: "热力学第一定律管理员", topic_id: 1, user_id: 1, file: file})
 |> Repo.insert!
 
-Paper.changeset(%Paper{}, %{title: "热力学第二定律phoenix", topic_id: 3, user_id: 3, file: file})
+Paper.changeset(%Paper{}, %{title: "热力学第二定律万有引力", topic_id: 3, user_id: 5, file: file})
+|> Repo.insert!
+
+Paper.changeset(%Paper{}, %{title: "热力学第三定律空调制冷", topic_id: 2, user_id: 6, file: file})
 |> Repo.insert!
 
 # Add reviews
 Repo.delete_all Review
 Review.changeset(%Review{}, %{status_id: 1, paper_id: 1, user_id: 2})
 |> Repo.insert!
+Review.changeset(%Review{}, %{status_id: 1, paper_id: 1, user_id: 3})
+|> Repo.insert!
+Review.changeset(%Review{}, %{status_id: 1, paper_id: 1, user_id: 4})
+|> Repo.insert!
 Review.changeset(%Review{}, %{status_id: 1, paper_id: 2, user_id: 2})
+|> Repo.insert!
+Review.changeset(%Review{}, %{status_id: 1, paper_id: 2, user_id: 3})
 |> Repo.insert!

@@ -1,6 +1,7 @@
 defmodule Paper.ReviewController do
   use Paper.Web, :controller
 
+  # Review Controller is for professor
   alias Paper.Review
   alias Paper.Paper
 

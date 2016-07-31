@@ -40,7 +40,7 @@ defmodule Paper.ExAdmin.Paper do
 
     query do
       %{
-        all: [preload: [:topic, :user, reviews: [:status, :user]]],
+        all: [preload: [:topic, :user, reviews: [:status, :user]]]
       }
     end
 

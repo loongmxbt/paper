@@ -74,7 +74,7 @@ defmodule Paper.Router do
   scope "/backend", Paper do
     pipe_through [:browser, :backend_layout, :auth_admin] # protected
     get "/", BackendController, :index
-    get "/reviews", BackendController, :reviews
+    get "/reviews", BackendController, :index_reviews
   end
 
   scope "/backend/admin", ExAdmin do

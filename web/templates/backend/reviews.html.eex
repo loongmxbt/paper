@@ -1,7 +1,7 @@
-<h2>Reviews</h2>
+<h2>评阅总览</h2>
 <div class="row">
   <div class="col-md-8">
-    <h3>Papers</h3>
+    <h3>论文总览</h3>
     <table class="table">
       <thead>
         <tr>
@@ -14,21 +14,31 @@
         </tr>
       </thead>
       <tbody>
+        <%= for paper <- @papers do %>
         <tr>
-          <td>1</td><td>标题1</td><td>空调</td><td>你</td><td>我</td><td>它</td>
+          <td><%= paper.id %></td><td><%= paper.title %></td><td><%= paper.topic.name %></td>
         </tr>
+        <% end %>
       </tbody>
     </table>
   </div>
 
   <div class="col-md-4">
-    <h3>Professors</h3>
+    <h3>教授总览</h3>
     <table class="table">
       <thead>
         <tr>
-          <th>姓名</th><th>领域</th><th>邮箱</th>
+          <th>姓名</th><th>邮箱</th>
         </tr>
       </thead>
+      <tbody>
+        <%= for professor <- @professors do %>
+        <tr>
+          <td><%= professor.name %></td>
+          <td><%= professor.email %></td>
+        </tr>
+        <% end %>
+      </tbody>
     </table>
   </div>
 </div>

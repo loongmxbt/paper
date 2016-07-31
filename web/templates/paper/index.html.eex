@@ -25,7 +25,7 @@
       <tbody>
       <%= for paper <- @papers do %>
       <tr>
-        <td><a href="<%= exfile_url(@conn, paper.file) %>"><%= paper.title %></a></td>
+        <td><%= paper.title %></td>
         <td><%= paper.topic.name %></td>
         <td>正在评阅</td>
 
