@@ -1,5 +1,8 @@
 defmodule Paper.ExAdmin.Paper do
   use ExAdmin.Register
+  alias Paper.Repo
+  alias Paper.Topic
+  alias Paper.User
 
   register_resource Paper.Paper do
 
@@ -11,6 +14,19 @@ defmodule Paper.ExAdmin.Paper do
       column :topic
       column :user, fields: [:name]
       actions
+    end
+
+    form paper do
+      inputs do
+        input paper, :title
+        input paper, :topic, collection: Repo.all(Topic)
+      end
+
+      # inputs "Reviews" do
+      #   has_many paper, :reviews, fn(r) ->
+      #     input r, :content
+      #   end
+      # end
     end
 
     show paper do
